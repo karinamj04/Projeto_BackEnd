@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* =====================
+   VARIÁVEIS DE TEMA
+===================== */
+:root {
+  --cor-texto-claro:#ffffff;
+  --cor-texto-escuro:#000000;
+  --fundo:#ffffff;
+  --cor-btn:#1b8836;
+  --cor-btn-hover:#18be18;
+  --sombra:#87a8dd;
+  --menu-icon:#000000;
+}
+
+.darkmode {
+  --cor-texto-claro:#ffffff;
+  --cor-texto-escuro:#eeeeee;
+  --cor-btn:#1b8836;
+  --cor-btn-hover:#18be18;
+  --sombra:#484d53;
+  --menu-icon:#ffffff;
+  --fundo:#051101;
+}
+
+/* =====================
+   ESTILO GLOBAL
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--fundo);
+  color: var(--cor-texto-escuro);
+  text-align: center;
+  scroll-behavior: smooth;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.darkmode {
+  background-color: var(--fundo);
+}
+
+/* =====================
+   BOTÃO MODO ESCURO
+===================== */
+#ModoEscuro {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  background-color: var(--cor-btn);
+  color: var(--cor-texto-claro);
+  border-color: var(--cor-texto-claro);
+  cursor: pointer;
+}
+
+#ModoEscuro i:last-child {
+  display: none;
+}
+
+.darkmode #ModoEscuro i:first-child {
+  display: none;
+}
+
+.darkmode #ModoEscuro i:last-child {
+  display: block;
+}
+
+/* =====================
+   HEADER / NAVBAR
+===================== */
+header {
+  background: var(--fundo);
+  box-shadow: 0 2px 6px var(--sombra);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.4s ease;
+}
+
+.logo {
+  color: var(--cor-btn);
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.nav-link {
+  color: var(--cor-texto-escuro) !important;
+  font-weight: 600;
+  margin: 0 50px;
+  padding-right: 50%;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--cor-btn-hover) !important;
+}
+
+#sair-btn {
+  background: var(--cor-btn);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+#sair-btn:hover {
+  background-color: var(--cor-btn-hover);
+}
+
+#perfil-btn {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 8px 18px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#perfil-btn:hover {
+  background: var(--cor-btn);
+  color: #fff;
+}
+
+/* =====================
+   DROPDOWN PERFIL
+===================== */
+.dropdown {
+  position: relative;
+}
+
+#perfil-btn {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 8px 18px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--cor-texto-escuro);
+  transition: all 0.3s;
+}
+
+#perfil-btn:hover,
+.dropdown.show #perfil-btn {
+  background: var(--cor-btn);
+  color: #fff;
+  border-color: var(--cor-btn);
+}
+
+#perfil-menu {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  margin-top: 8px;
+  min-width: 220px;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease;
+}
+
+#perfil-menu .dropdown-item {
+  color: var(--cor-texto-escuro);
+  font-weight: 500;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+#perfil-menu .dropdown-item:hover {
+  color: #18be18;
+}
+
+#perfil-menu .dropdown-divider {
+  margin: 5px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* animação suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   MODO ESCURO DROPDOWN
+===================== */
+body.darkmode #perfil-btn {
+  background: #193619;
+  border: 1px solid #2b5e2b;
+  color: #f0f0f0;
+}
+
+body.darkmode #perfil-btn:hover,
+body.darkmode .dropdown.show #perfil-btn {
+  background: var(--cor-btn-hover);
+  border-color: var(--cor-btn-hover);
+}
+
+body.darkmode #perfil-menu {
+  background: #0b1a0b;
+  border-color: #1f3d1f;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+body.darkmode #perfil-menu .dropdown-item {
+  color: #d4d4d4;
+}
+
+body.darkmode #perfil-menu .dropdown-item:hover {
+  background: var(--cor-btn);
+  color: #ffffff;
+}
+
+body.darkmode #perfil-menu .dropdown-divider {
+  border-top: 1px solid #2b5e2b;
+}
+
+/* =====================
+   ESPAÇAMENTO ENTRE PERFIL E MODO ESCURO
+===================== */
+.navbar .collapse {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* controla o espaço entre perfil, sair e modo escuro */
+}
+
+
+/* =====================
+   BANNER / CAROUSEL
+===================== */
+.banner {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.banner .carousel-item img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--sombra);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--cor-btn);
+}
+
+.carousel-caption {
+  background: rgba(27, 136, 54, 0.8);
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: var(--cor-texto-claro);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+  color: var(--cor-texto-claro) !important;
+}
+
+/* =====================
+   FORMULÁRIO DE AGENDAMENTO
+===================== */
+.agendamento {
+  padding: 60px 0;
+  background: var(--fundo);
+  transition: background-color 0.4s ease;
+}
+
+.agendamento-card {
+  max-width: 550px;
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d9f5e0;
+  box-shadow: 0 3px 10px var(--sombra);
+  margin: 0 auto;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.darkmode .agendamento-card {
+  background: #0d1a0f;
+  border: 1px solid #333;
+}
+
+.agendamento-card h2 {
+  color: var(--cor-btn);
+  font-weight: 700;
+}
+
+.form-label {
+  color: var(--cor-btn);
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1px solid #cde6d4;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cor-btn);
+  box-shadow: 0 0 5px rgba(27, 136, 54, 0.3);
+}
+
+.btn-success {
+  background-color: var(--cor-btn);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+  background-color: var(--cor-btn-hover);
+}
+
+/* =====================
+   CARDS DOS MÉDICOS
+===================== */
+.medicos-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.medico-card {
+  background: var(--fundo);
+  border-radius: 15px;
+  box-shadow: 0 3px 10px var(--sombra);
+  width: 220px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.darkmode .medico-card {
+  background: #0d1a0f;
+}
+
+.medico-card:hover {
+  transform: translateY(-5px);
+}
+
+.medico-card img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  height: 200px;
+  object-fit: cover;
+}
+
+.medico-card h3 {
+  color: var(--cor-btn);
+  margin-top: 10px;
+}
+
+/* =====================
+   FEEDBACK
+===================== */
+.feedback-carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.feedback-carousel h2 {
+  color: var(--cor-btn);
+  margin-bottom: 20px;
+}
+
+.feedback-banner {
+  background: rgba(27, 136, 54, 0.85);
+  color: var(--cor-texto-claro);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--sombra);
+  min-height: 150px;
+}
+
+.feedback-banner p {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.feedback-banner span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #d9f5e0;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  background: var(--cor-btn);
+  color: var(--cor-texto-claro);
+  padding: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 60px;
+  transition: background-color 0.4s ease;
+}
+
+.footer p{
+  text-align: center;
+}
+
+.darkmode .footer {
+  background: #0f2810;
+}

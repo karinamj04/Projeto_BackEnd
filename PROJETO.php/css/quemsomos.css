@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+}
+
+/* Navbar Universal */
+.navbar {
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1b8836;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown-item:hover {
+  color: #1cb11c;
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+}
+
+#cadastro {
+  padding: 8px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #1b8836;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+#cadastro:hover {
+  background-color: #175727;
+}
+
+/* Seção Quem Somos */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-section {
+  flex: 1 1 500px;
+}
+
+.image-section {
+  flex: 1 1 400px;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+}
+
+.content-section .title {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.content-section .content h3 {
+  margin-top: 20px;
+  color: #5d5d5d;
+  font-size: 21px;
+}
+
+.content-section .content p {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.content-section .content .button {
+  margin-top: 30px;
+}
+
+.content-section .content .button a {
+  background-color: #158c15;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.content-section .content .button a:hover {
+  background-color: #3ac55d;
+  color: #ffffff;
+}
+
+.content-section .social {
+  margin-top: 40px;
+}
+
+.content-section .social i {
+  color: #1cb11c;
+  font-size: 30px;
+  padding: 0 10px;
+}
+
+.content-section .social i:hover {
+  color: #3d3d3d;
+}
+
+/* Responsivo */
+@media (max-width: 991px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-section .title {
+    font-size: 22px;
+  }
+
+  .content-section .content h3 {
+    font-size: 20px;
+  }
+
+  .content-section .content p {
+    font-size: 17px;
+  }
+
+  .content-section .content .button a {
+    font-size: 18px;
+    padding: 10px 30px;
+  }
+
+  .image-section img {
+    margin-top: 0;
+  }
+}

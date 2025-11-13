@@ -1,0 +1,47 @@
+
+main {
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+    color: #1b5e20;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: separate; /* importante para border-radius */
+    border-spacing: 0;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden; /* faz o arredondado funcionar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: #1b5e20;
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+td {
+    padding: 0.6rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:last-child td {
+    border-bottom: none; /* remove a borda inferior do último */
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+}

@@ -1,0 +1,54 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f9fafb;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  min-width: 220px;
+  max-width: 220px;
+  background-color: #14532d; /* Verde escuro */
+  color: white;
+  flex-shrink: 0;
+  border-right: 2px solid #0f3d20;
+}
+
+.sidebar h3 {
+ font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between; /* título na esquerda, ícone na direita */
+  align-items: center;
+  padding-right: 10px; /* afasta o ícone da borda */
+}
+
+.sidebar a {
+  color: #e5e5e5;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #1a7f45; /* Verde médio */
+  color: #ffffff;
+}
+
+/* Card destaque */
+.card-highlight {
+  background-color: #22c55e; /* Verde vibrante */
+  color: white;
+  border: none;
+}
+
+/* Perfil na navbar */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 2px solid #22c55e;
+}
