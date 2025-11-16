@@ -1,0 +1,28 @@
+body {
+  background: linear-gradient(135deg, #121f0e, #122b10) ;
+  font-family: 'Poppins', sans-serif;
+}
+
+.erro-card {
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.erro-icon {
+  width: 90px;
+  height: 90px;
+  opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .erro-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .erro-icon {
+    width: 70px;
+    height: 70px;
+  }
+}

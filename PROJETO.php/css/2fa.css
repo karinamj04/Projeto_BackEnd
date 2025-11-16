@@ -1,0 +1,128 @@
+.imagem-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .imagem-fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:  brightness(0.5); 
+  }
+
+#feedback {
+  color: #fff !important;  /* branco sempre */
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+}
+  
+  
+  header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    border-bottom: 3px solid #28a745;
+    display: inline-block;
+  }
+  
+  
+
+main.container {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  color: #fff;
+  margin: 2rem auto;
+}
+
+
+main.container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+  
+  main.container p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-verde {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-verde:hover {
+    background-color: #218838;
+  }
+  
+ 
+  #mensagensErro {
+    margin-top: 1rem;
+  }
+  
+  
+  footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    z-index: 100;
+  }
+  
+  .footer-container p {
+    margin: 0;
+    
+    
+  }
+  
+ 
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    main.container {
+      padding: 1rem;
+    }
+  }
+ 
+  #btn-exibirSenha {
+  position: absolute;
+  top: 69%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+  font-size: 1.2rem;
+  z-index: 2;
+}

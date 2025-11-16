@@ -1,0 +1,49 @@
+/* =====================
+   FORMULÁRIO DE CADASTRO NO DASHBOARD
+===================== */
+
+form {
+  background: #fff; /* fundo branco */
+  padding: 20px 20px; /* padding menor que antes */
+  border-radius: 10px; /* cantos suavizados */
+  border: 1px solid #e0e0e0; /* borda clara */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* sombra leve */
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.form-control,
+.form-select {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 8px 12px;
+  height: 38px;
+  font-size: 0.9rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #1b8836; /* verde do tema */
+  box-shadow: 0 0 3px rgba(27, 136, 54, 0.3);
+}
+
+.btn-verde {
+  background-color: #19ad3e;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.btn-verde:hover {
+  background-color: #146227;
+}
