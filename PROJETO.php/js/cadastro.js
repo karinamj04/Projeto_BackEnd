@@ -16,7 +16,7 @@ $(document).ready(function () {
     // Fechar automático após 3s
     setTimeout(() => {
       fecharAlerta();
-    }, 3000);
+    }, 10000);
   }
 
   function fecharAlerta() {
@@ -235,4 +235,5 @@ $(document).ready(function () {
     $form.off("submit").submit();
   });
 });
+
 
