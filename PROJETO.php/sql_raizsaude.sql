@@ -113,3 +113,19 @@ INSERT INTO usuarios (
 
 ('999.888.777-66', 'Carlos', 'Almeida', 'Fernanda Almeida', 'Masculino', 'Av. Brasil, 400', 'Jardins', 'SP', '01430-000', 'São Paulo',
  'carlos.almeida@clinica.com', '', 1, '(11) 93456-7788', '1985-05-20', 'admin');
+
+INSERT INTO especialidades (nome) VALUES
+('Cardiologia'),
+('Dermatologia'),
+('Ortopedia'),
+('Pediatria'),
+('Ginecologia'),
+('Neurologia');
+
+INSERT INTO medicos (nome, id_especialidade) VALUES
+('Dr. João Pereira', 1),
+('Dra. Maria Souza', 2),
+('Dr. Ricardo Lima', 3),
+('Dra. Ana Barbosa', 4),
+('Dra. Paula Oliveira', 5),
+('Dr. Marcos Santos', 6);
