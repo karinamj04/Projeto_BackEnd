@@ -49,8 +49,16 @@ $(document).ready(function () {
   });
 
 
+ // js/agendar.js
+$(function () {
   // === Restrições no calendário ===
   const inputData = $('input[name="data"]');
+
+  if (inputData.length === 0) {
+    // se não encontrou o input, não segue (evita erro no console)
+    console.warn('Input de data não encontrado: input[name="data"]');
+    return;
+  }
 
   // Define data mínima como amanhã (não pode hoje nem datas passadas)
   const hoje = new Date();
@@ -59,14 +67,40 @@ $(document).ready(function () {
   inputData.attr("min", dataMinima);
 
   // Bloqueia seleção de sábados e domingos
-  inputData.on("input", function () {
-    const dataSelecionada = new Date($(this).val() + "T00:00:00");
+  inputData.on("input change", function () {
+    const val = $(this).val();
+    if (!val) return; // nada selecionado
+
+    // Criar Date usando formato ISO para evitar problemas de timezone:
+    const dataSelecionada = new Date(val + "T00:00:00");
+    if (isNaN(dataSelecionada.getTime())) {
+      // valor inválido (proteção extra)
+      Swal.fire({
+        icon: 'error',
+        title: 'Data inválida',
+        text: 'O valor de data selecionado não é válido. Tente novamente.',
+        confirmButtonText: 'Ok'
+      });
+      $(this).val('');
+      $(this).focus();
+      return;
+    }
+
     const diaSemana = dataSelecionada.getDay(); // 0 = domingo, 6 = sábado
 
     if (diaSemana === 0 || diaSemana === 6) {
-      alert(" Não é possível agendar consultas em finais de semana.");
+      Swal.fire({
+        icon: 'warning',
+        title: 'Agendamento indisponível',
+        text: 'Não é possível agendar consultas em finais de semana.',
+        confirmButtonText: 'Entendi',
+      });
+
       $(this).val("");
+      $(this).focus();
     }
   });
+});
+
 
 });
