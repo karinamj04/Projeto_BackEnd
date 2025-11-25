@@ -1,21 +1,19 @@
-
 :root{
   --cor-texto-claro:#ffffff;
   --cor-texto-escuro:#000000;
   --fundo:#ffffff;
   --cor-btn:#1b8836;
   --cor-btn-hover: #18be18;
-  --sombra: #87a8dd;
+  --sombra: #6e6e6e;
   --menu-icon: #000000;
   
 }
 
-.darkmode {
-  --cor-texto-claro:#ffffff;
+.darkmode{
   --cor-texto-escuro:#eeeeee;
   --cor-btn:#1b8836;
   --cor-btn-hover: #18be18;
-  --sombra: #484d53;
+  --sombra: #a1dfbd;
   --menu-icon:#ffffff;
  --fundo:#051101;
 
@@ -26,22 +24,28 @@
 html {
   margin: 0;
   padding: 0;
-  
+  height: 100%;
+  background-color: transparent;
+
+}
+html.darkmode body{
+  background-color: var(--fundo)!important;
 }
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: var(--fundo);
+ background-color: var(--fundo) !important;
+  transition: background-color 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: justify;  
+  text-align: justify; 
+  color: var(--cor-texto-escuro); 
+  min-height: 100vh;
 }
 
-body.darkmode{
-  background-color: var(--fundo);
-}
+
 
 #ModoEscuro{
 width: 30px;
@@ -54,7 +58,8 @@ align-items: center;
 margin-left: 2rem;
 background-color: var(--cor-btn);
 color: var(--cor-texto-claro);
-border-color: var(--cor-texto-claro);
+border: 1px solid var(--cor-texto-claro);
+cursor: pointer;
 }
 
 #ModoEscuro i:last-child{
@@ -71,6 +76,11 @@ border-color: var(--cor-texto-claro);
   display: block;
 }
 
+#ModoEscuro:hover{
+  background-color: var(--cor-btn-hover);
+  transform: scale(1.10);
+  transition: 0.2s;
+}
 
 header {
   width: 100%;
@@ -80,12 +90,26 @@ header {
   align-items: center;
 }
 
-
-.navigation a {
-  color: var(--cor-media);
-  text-decoration: none;
+.font-buttons {
+  position: fixed;
+  top: 90px;
+  right: 10px;
+  z-index: 999;
 }
 
+.button-alterFont{
+
+font-size: 18px ;
+background-color: var(--cor-btn);
+color: var(--cor-texto-claro);
+border-radius: 20%;
+
+}
+
+.button-alterFont:hover{
+  background-color: var(--cor-btn-hover);
+  transform: scale(1.10);
+}
 
 .logo {
   font-size: 28px;
@@ -97,31 +121,27 @@ header {
 
 /* Estilo da navegação */
 .nav-tabs {
-  display: flex;
-  align-items: center;
   list-style: none; 
   padding: 0;
   margin: 0;
 }
 
-.nav-item {
-  margin-left: 30px;
+/* Links de Navegação */
+.nav-item .nav-link {
+  color: var(--cor-texto-escuro); /* Cor do link no modo atual */
   text-decoration: none;
-  color: var(--cor-texto-escuro);
   font-size: 18px;
   font-weight: bold;
-  transition: 0.3s;
-  position: relative;
+  transition: color 0.3s;
 }
-
 /* Efeito ao passar o mouse nos links */
-.navigation a:hover {
-  color: var(--cor-btn-hover);
+.nav-item .nav-link:hover {
+  color: var(--cor-btn-hover)!important;
 }
 
-/* Estilo do dropdown toggle */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block; 
+.home-menu{
+  color: var(--cor-texto-escuro) !important;
+  background-color: var(--fundo) !important;
 }
 
 /* Estilo do menu dropdown */
@@ -129,45 +149,52 @@ header {
   position: absolute;
   top: 100%; 
   left: 0;
-  border: 1px solid;
+  border: 1px solid var(--sombra);
   padding: 10px 0;
   min-width: 180px;
   display: none; 
   flex-direction: column;
   z-index: 1000;
+  background-color: var(--fundo) !important;
+
 }
 
 /* Estilo dos links dentro do dropdown */
 .dropdown-item {
   padding: 10px 20px;
-  color: var(--cor-texto-escuro);
+  background-color: var(--fundo)!important;
+  color: var(--cor-texto-escuro)!important;
   text-decoration: none;
   font-size: 16px;
+  background-color: transparent;
 }
 
 .dropdown-item:hover {
-  background-color: var(--fundo);
-  color: var(--cor-btn-hover);
+  background-color: var(--cor-texto-escuro)!important;
+  color: var(--cor-btn-hover)!important;
 }
 
 /* Estilo para o divisor do dropdown */
 .dropdown-divider {
   height: 1px;
   margin: 5px 0;
-  background-color: var(--fundo);
 }
 
 /* carousel de imagens*/
 .carousel-inner{
-  height: 24rem;
+  height: 34rem;
+   object-fit: cover;
+  width: 100%;
+  
 }
 
 
   /* Estilo do botão */
-  #cadastro {
+  #login {
     margin-left: 30px; 
     padding: 8px 20px; 
     font-size: 16px; 
+    text-decoration: none;
     color: var(--cor-texto-claro); 
     background-color: var(--cor-btn); 
     border: none; 
@@ -179,14 +206,12 @@ header {
   }
 
   /* Efeito ao passar o mouse no botão */
-  #cadastro:hover {
+  #login:hover {
     background-color: var(--cor-btn-hover); 
+    transform: scale(1.10);
+    transition: 0.3s;
   }
 
-  #cadastro:hover {
-  background-color: var(--cor-btn-hover);
-  transform: scale(1.05);
-}
 
   .navigation {
     display: flex; 
@@ -196,18 +221,18 @@ header {
   .texto-esquerda {
     margin: 4rem;
     padding: 3rem;
-  width: 60%;
-  text-align: left;
-  font-weight: bold;
-  background-color: transparent;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 4px 10px var(--cor-texto-escuro);
-  border-radius: 20px;
+    width: 60%;
+    text-align: left;
+    font-weight: bold;
+    background-color: var(--fundo);
+    box-shadow: 0 4px 10px var(--sombra);
+    border-radius: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 
 .texto-esquerda h1 { 
-  text-align: center;
+    text-align: center;
     font-size: 36px;
     margin-bottom: 20px;
     color: var(--cor-btn);
@@ -236,41 +261,48 @@ header {
   display: inline-block;
   margin-left: 20px;
   margin-bottom: 20px;
-  justify-content: center;
 }
 
-.btn-contato:hover {
+#btn-Contato:hover {
   background-color: var(--cor-btn-hover);
   transform: scale(1.05);
 }
 
-.btn-contato:active {
-  background-color: var(--cor-texto-escuro);
-  transform: scale(0.98);
-}
-
 /* RESPONSIVIDADE PARA TELAS MENORES */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+
   header {
     flex-direction: column;
     align-items: center;
     padding: 15px;
   }
 
+  .logo{
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
 
   .navigation {
     flex-direction: column;
-    align-items: center;
     width: 100%;
+    margin-bottom: 15px;
   }
 
-  .navigation a,
-  #cadastro {
+  .nav-tabs{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-item{
+    margin: 5px 0;
+  }
+
+  #ModoEscuro{
     margin: 10px 0;
-    font-size: 16px;
   }
 
-  #cadastro {
+  #login {
     width: 80%;
     margin-right: 0;
     padding: 10px;
@@ -279,6 +311,7 @@ header {
   .texto-esquerda {
     width: 90%;
     margin: 40px auto;
+    padding: 20px;
     text-align: center;
   }
 
@@ -288,25 +321,22 @@ header {
 
   .texto-esquerda p {
     font-size: 16px;
+    margin-left: 0;
+    text-align: justify;
   }
 
+  #btn-contato{
+    margin-left: 0;
+  }
 
   .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    border: none;
+  position: static;
+  border: none;
+  box-shadow: none;
+    
   }
-}
-.navigation a:focus,
-#cadastro:focus,
-.texto-esquerda .btn:focus {
-  outline: 2px solid var(--cor-btn);
-  outline-offset: 2px;
-}
 
-.collapse-horizontal p {
-  text-align: justify;
-  font-weight: lighter;
-  color: var(--cor-btn);
- 
+  .dropdown-item{
+    padding-left: 40px;
+  }
 }
