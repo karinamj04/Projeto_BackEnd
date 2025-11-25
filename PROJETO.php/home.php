@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script type="text/javascript" src="js/darkmode.js" defer></script>
+    <script type="text/javascript" src="js/controleFonte.js" defer></script>
     <title>HOME - Raízes da Saúde</title>
 </head>
 <body>
@@ -55,10 +56,17 @@
             <button id="ModoEscuro"><i class="bi bi-moon-fill"></i><i class="bi bi-brightness-high-fill"></i></button>
             </nav>
 
-          <button id="cadastro">Login</button>
+          <a id="login" href="login.php">login</a>
 
           
     </header>
+
+   <!--Botôes de aumentar e diminuir fonte-->
+    <div class="font-buttons">
+        <button class="button-alterFont" onclick="adjustFontSize(1)">A+</button>
+        <button class="button-alterFont" onclick="adjustFontSize(-1)">A-</button>
+    </div>
+
 
  <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
@@ -95,7 +103,7 @@
 
         Valorizamos a escuta, o acolhimento e a confiança, garantindo que cada pessoa se sinta segura e bem cuidada desde o primeiro contato
         </p>
-       <a href="contato.php" id="btn-Contato" class="btn-contato">Nosso Contato</a>
+       <a href="contato.php" id="btn-Contato" >Nosso Contato</a>
     
     </div>
     
@@ -105,19 +113,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
-    <script>
-    // Quando a página carregar...
-    document.addEventListener("DOMContentLoaded", function () {
-      // Seleciona o botão pelo ID
-      const botao = document.getElementById("cadastro");
-
-      // Adiciona o evento de clique
-      botao.addEventListener("click", function () {
-        // Redireciona para a outra página
-        window.location.href = "login.php";
-      });
-    });
-  </script>
 
 </body>
 </html>
